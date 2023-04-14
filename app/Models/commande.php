@@ -9,4 +9,5 @@ use Illuminate\Database\Eloquent\Model;
 class commande extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id_commande';
 }

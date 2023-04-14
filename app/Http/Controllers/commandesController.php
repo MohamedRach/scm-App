@@ -12,7 +12,11 @@ class commandesController extends Controller
         $this->middleware('auth');
         
     }
-    
+    public function index()
+    {
+        $commandes = commande::all();
+        return view('commandes.index', ["commandes" => $commandes]);
+    }
     public function create()
     {
         return view("commandes.create");
@@ -30,4 +34,11 @@ class commandesController extends Controller
         $commande->save();
         return redirect('/');
     }
+
+    public function destroy($id_commande)
+    {
+        $commande = commande::findorfail($id_commande);
+        $commande->delete();
+    }
+    
 }

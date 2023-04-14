@@ -17,7 +17,8 @@ class retourController extends Controller
     }
     public function index()
     {
-        //
+        $retour = retour::all();
+        return view('retour.index', ["retours" => $retour]);
     }
 
     /**
@@ -70,8 +71,9 @@ class retourController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(retour $retour)
+    public function destroy($id)
     {
-        //
+        $retour = retour::findorfail($id);
+        $retour->delete();
     }
 }

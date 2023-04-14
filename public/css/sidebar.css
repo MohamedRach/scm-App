@@ -1,0 +1,37 @@
+*{
+
+    margin-left: 0px;
+    padding: 0px;
+    margin-top: 0px;
+  }
+
+.SideBar{
+    background-color: #B3D2EE;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+  
+  }
+.logo{
+    text-align: center;
+    padding: 20px 0px;
+    width: 140px;
+    margin-left: 20px;
+}
+.menu{
+    margin-top: 100px;
+    margin-left: -10px;
+}
+  
+.menu li{
+    padding: 10px 0px;
+    list-style-type: none;
+    text-align: center;
+    font-style: bold;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.menuItem{
+    text-decoration: none;
+    color: black;
+}
