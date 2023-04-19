@@ -19,7 +19,7 @@ class tournéeController extends Controller
     }
     public function index()
     {
-        
+        return view('tournée.index');
     }
 
     /**

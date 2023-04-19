@@ -32,7 +32,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
+Route::get("/tournée", [tournéeController::class, "index"])->name('tournée.index');
 Route::get("/admin/tournée", [tournéeController::class, "create"])->name('tournée.create');
 Route::post("/admin/tournée", [tournéeController::class, "store"])->name("tournée.store");
 

@@ -1,34 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="<?php echo asset('css/table.css')?>">
+</head> 
 <body>
-    <table>
+    
+  
+    @extends('layouts.sidebar')
+    @section('content') 
+        <div class="app-content">
+        <div class="app-content-header">
+            <h1 class="app-content-headerText">Retours</h1>
+            
+        </div>
         
-        <thead>
-            <tr>
-                <td>id_retour</td>
-                <td>état</td>
-                <td>motif</td>
-                <td>id_commande</td>
-                <td>id_client</td>
-                <td>supprimer retour</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($retours as $retour )
-                <td>{{ $retour->id_retour }}</td>
-                <td>{{ $retour->etat }}</td>
-                <td>{{ $retour->motif }}</td>
-                <td>{{ $retour->id_commande }}</td>
-                <td>{{ $retour->id_client }}</td>
-                <td><a href="{{ route("retour.destroy", $retour->id_retour) }}">supprimer</a></td>
-            @endforeach
-        </tbody>
-    </table>
+        <table class="products-area-wrapper tableView">
+            <thead>
+                <tr class="products-header">
+                    <td class="product-cell "> Id</td>
+                    <td class="product-cell ">Adresse</td>
+                    <td class="product-cell ">Ville</td>
+                    <td class="product-cell ">C.Postal</td>
+                    <td class="product-cell">Etat</td>
+                    <td class="product-cell">ID Commande</td>
+                    <td class="product-cell ">ID Client</td>
+                    <td class="product-cell">Actions</td>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr class="products-row">
+                    <td class="product-cell">1</td>
+                    <td class="product-cell">Avenue Mohamed Ben...</td>
+                    <td class="product-cell">Rabat</td>
+                    <td class="product-cell">10011</td>
+                    <td class="product-cell status active">Nouveau</td>
+                    <td class="product-cell">3</td>
+                    <td class="product-cell">2</td>
+                    <td class="product cell links"><a class="links" href="#">Modifier </a><a class="links" href="#">Supprimer</a></td>
+                </tr>
+            </tbody>
+            
+        
+        </table>
+        <script src="<?php echo asset('js/sidebar')?>"></script>
+    @endsection
+    
 </body>
-</html>
