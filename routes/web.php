@@ -46,7 +46,7 @@ Route::post("/user/retour", [retourController::class, 'store'])->name("retour.st
 Route::get('/retour', [retourController::class, 'index'])->name("retour.index");
 Route::get("retour/{id}", [retourController::class, 'destroy'])->name("retour.destroy");
 Route::get("/dashboard", function(){
-    return view("sidebar");
+    return view("welcome");
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
