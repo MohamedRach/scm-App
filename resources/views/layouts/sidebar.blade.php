@@ -8,7 +8,7 @@
     <title>SCM-APP</title>
 </head>
 <body>
-    <div class="nav-container">
+    <div class="app-container">
         <div class="sidebar">
           <div class="sidebar-header">
             <div class="app-icon">
@@ -43,8 +43,7 @@
           </ul>
           
         </div>
-        @yield('content')
-      </div>
-    @yield('script')
+        @yield('content') 
+    </div> 
 </body>
 </html>

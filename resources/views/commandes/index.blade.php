@@ -8,49 +8,57 @@
     @extends('layouts.sidebar')
     @section('content') 
         <div class="app-content">
-        <div class="app-content-header">
-            <h1 class="app-content-headerText">Commandes</h1>
-            
+            <div class="title">
+                <h1>Commandes</h1>
+            </div>
+            <div class="buttons">
+                <button class="trier">trier</button>
+            </div>
+            <div class="table-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Adresse</th>
+                            <th>Ville</th>
+                            <th>C.Postale</th>
+                            <th>Poids (KG)</th>
+                            <th>Prix (MAD)</th>
+                            <th>Etat</th>
+                            <th>Tournée</th>
+                            <th>Client</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Rue Ahmed Saadi, Casa..</td>
+                            <td>Casablanca</td>
+                            <td>100011</td>
+                            <td>13</td>
+                            <td>123</td>
+                            <td><p class="status red">Non livré</p></td>
+                            <td>3</td>
+                            <td>1104</td>
+                            <td><a href="#">Modifier</a><br><a href="#">Supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Rue Ahmed Saadi, Casa..</td>
+                            <td>Casablanca</td>
+                            <td>100011</td>
+                            <td>13</td>
+                            <td>123</td>
+                            <td><p class="status yellow">en cours</p></td>
+                            <td>3</td>
+                            <td>1104</td>
+                            <td><a href="#">Modifier</a><br><a href="#">Supprimer</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        
-        <table class="products-area-wrapper tableView">
-            <thead>
-                <tr class="products-header">
-                    <td class="product-cell "> Id</td>
-                    <td class="product-cell ">Nom Benificiare</td>
-                    <td class="product-cell small ">N° telphone</td>
-                    <td class="product-cell ">Adresse</td>
-                    <td class="product-cell ">Ville</td>
-                    <td class="product-cell ">C.Postal</td>
-                    <td class="product-cell">Etat</td>
-                    <td class="product-cell">Poid</td>
-                    <td class="product-cell">Prix</td>
-                    <td class="product-cell">ID tournée</td>
-                    <td class="product-cell ">ID Client</td>
-                    <td class="product-cell">Actions</td>
-                </tr>
-                
-            </thead>
-            <tbody>
-                <tr class="products-row">
-                    <td class="product-cell">1</td>
-                    <td class="product-cell">Said Kamal</td>
-                    <td class="product-cell">0677895698</td>
-                    <td class="product-cell">Avenue Mohamed Ben...</td>
-                    <td class="product-cell">Rabat</td>
-                    <td class="product-cell">10011</td>
-                    <td class="product-cell status active">Nouveau</td>
-                    <td class="product-cell">123 KG</td>
-                    <td class="product-cell">100 DH</td>
-                    <td class="product-cell">3</td>
-                    <td class="product-cell">2</td>
-                    <td class="product cell links"><a class="links" href="#">Modifier </a><a class="links" href="#">Supprimer</a></td>
-                </tr>
-            </tbody>
-            
-        
-        </table>
-        <script src="<?php echo asset('js/sidebar')?>"></script>
     @endsection
     
 </body>

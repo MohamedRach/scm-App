@@ -1,0 +1,105 @@
+.title{
+    position: relative;
+    left: 30px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 30px;
+}
+
+.ajouter{
+    font-family: "Poppins", sans-serif;
+    margin-left: 20px;
+    background-color: #2869ff;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 3px;
+}
+.trier{
+    font-family: "Poppins", sans-serif;
+    background-color: #2869ff;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 3px;
+}
+label{
+    display: block;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+select{
+    appearance: none;
+    background-repeat: no-repeat;
+    padding: 8px 24px 8px 8px;
+    background-position: right 4px center;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: black;
+    font-size: 12px;
+    background-color: transparent;
+    margin-bottom: 16px;
+    width: 80px;
+}
+option{
+    font-family: "Poppins", sans-serif;
+}
+.table{
+    font-family: "Poppins", sans-serif;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e1e5ee;
+    background-color: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    left: 30px;
+    margin-top: 20px;
+   
+}
+.tournee{
+    width: 1000px;
+}
+thead{
+    box-shadow: 0 5px 10px  #e1e5ee;
+}
+th{
+    padding: 0.5rem 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+td{
+    padding: 0.5rem 0.7rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+tr:nth-child(even) {
+    background-color: #f4f6fb;
+}
+.status{
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+}
+.red{
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+.yellow{
+    background-color: #fff0c2;
+    color: #a68b00;
+}
+.green{
+    background-color: #c8e6c9;
+    color: #388e3c;
+}
