@@ -107,7 +107,7 @@ a{
 	left: 55px;
 	width: 100%;
 	height: 2px;
-	background: black;
+	background: var(--table-border);
 }
 
 .wrapper .header ul li:last-child:before{
@@ -130,11 +130,11 @@ a{
 }
 
 .wrapper .header ul li.active:before{
-	background: black;
+	background: var(--sidebar);
 }
 
 .wrapper .header ul li.active p{
-	background: black;
+	background: var(--sidebar);
 }
 
 .wrapper .form_wrap{
@@ -147,7 +147,13 @@ a{
 	text-transform: uppercase;
 	margin-bottom: 20px;
 }
-
+.wrapper .form_wrap .form_container{
+	display: grid;
+	grid-template-columns: [first] 50% [second] 50%  [end];
+ 	grid-template-rows: [row1-start] 25% [row1-end] 25% [third-line] auto [last-line];
+	column-gap: 15px;
+	row-gap: 20px;
+}
 .wrapper .form_wrap .input_wrap{
 	width: 350px;
 	max-width: 100%;
@@ -162,20 +168,21 @@ a{
 	display: block;
 	margin-bottom: 5px;
 }
-
 .wrapper .form_wrap .input_wrap .input{
-	border: 2px solid black;
-	border-radius: 3px;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid #1a2131;
+	width: 100%;
 	padding: 10px;
-	display: block;
-	width: 100%;	
-	font-size: 16px;
-	transition: 0.5s ease;
+	margin-bottom: 20px;
+	font-size: 20px;
+	
+}
+.wrapper .form_wrap .input_wrap .input :focus{
+	outline: 0;
 }
 
-.wrapper .form_wrap .input_wrap .input:focus{
-	border-color: black;
-}
+
 
 .wrapper .btns_wrap{
 	width: 350px;
@@ -206,6 +213,36 @@ a{
 	transition: 0.5s ease;
 	cursor: pointer;
 }
+.shipment-type{
+	display: flex;
+	flex-direction: row;
+	column-gap: 50px;
+	align-items: center;
+}
+.parcel{
+	border: 2px solid black;
+	padding: 75px 35px;
+	position: relative;
+	top: 45px;
+	left: 200px;
+	cursor: pointer;
+}
+.parcel:hover{
+	border-color: red;
+	color: red;
+}
+.document{
+	border: 2px solid black;
+	padding: 75px 30px;
+	position: relative;
+	left: 250px;
+	top: 45px;
+	cursor: pointer;
+}
+.document:hover{
+	border-color: red;
+	color: red;
+}
 .wrapper .btns_wrap .common_btns input{
 	border: 0;
 	padding: 12px 15px;
@@ -222,14 +259,23 @@ a{
 }
 
 .wrapper .btns_wrap .common_btns button.btn_back{
-	background: var(--secondary);
+	background: grey;
+	position: relative;
+	right: 200px;
 }
 
 .wrapper .btns_wrap .common_btns button.btn_next .icon{
 	display: flex;
 	margin-left: 10px;
 }
-
+.wrapper .btns_wrap .common_btns button.btn_next {
+	position: relative;
+	left: 200px;
+}
+.wrapper .btns_wrap .common_btns input.btn_done {
+	position: relative;
+	left: 200px;
+}
 .wrapper .btns_wrap .common_btns button.btn_back .icon{
 	display: flex;
 	margin-right: 10px;
@@ -237,11 +283,11 @@ a{
 
 .wrapper .btns_wrap .common_btns button.btn_next:hover,
 .wrapper .btns_wrap .common_btns input.btn_done:hover{
-	background: var(--next-btn-hover);
+	background: red;
 }
 
 .wrapper .btns_wrap .common_btns button.btn_back:hover{
-	background: var(--back-btn-hover);
+	background: red;
 }
 
 .modal_wrapper{

@@ -24,6 +24,7 @@
                             <th>C.Postale</th>
                             <th>Poids (KG)</th>
                             <th>Prix (MAD)</th>
+                            <th>GSM</th>
                             <th>Etat</th>
                             <th>Tournée</th>
                             <th>Client</th>
@@ -38,6 +39,7 @@
                             <td>100011</td>
                             <td>13</td>
                             <td>123</td>
+                            <td>0654374567</td>
                             <td><p class="status red">Non livré</p></td>
                             <td>3</td>
                             <td>1104</td>
@@ -50,6 +52,7 @@
                             <td>100011</td>
                             <td>13</td>
                             <td>123</td>
+                            <td>0654374567</td>
                             <td><p class="status yellow">en cours</p></td>
                             <td>3</td>
                             <td>1104</td>

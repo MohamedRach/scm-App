@@ -34,6 +34,7 @@
 				<div>
 					<p>1</p>
 				</div>
+               
 			</li>
 			<li class="form_2_progessbar">
 				<div>
@@ -50,11 +51,15 @@
 	<div class="form_wrap">
         <form action="">
             <div class="form_1 data_info">
-                <h2>Détails du Destinataire</h2>
+                    <h2>Détails du Destinataire</h2>
                 
                     <div class="form_container">
                         <div class="input_wrap">
-                            <label for="email">Nom Complet</label>
+                            <label for="email">Nom</label>
+                            <input type="text" name="Email Address" class="input" id="email">
+                        </div>
+                        <div class="input_wrap">
+                            <label for="email">Prénom</label>
                             <input type="text" name="Email Address" class="input" id="email">
                         </div>
                         <div class="input_wrap">
@@ -62,10 +67,18 @@
                             <input type="password" name="password" class="input" id="password">
                         </div>
                         <div class="input_wrap">
-                            <label for="confirm_password">Adresse</label>
+                            <label for="confirm_password">building number</label>
                             <input type="text" name="confirm text" class="input" id="confirm_text">
+                        </div>
+                        <div class="input_wrap">
+                            <label for="confirm_password">Street Name</label>
+                            <input type="text" name="confirm text" class="input" id="confirm_text">
+                        </div>
+                        <div class="input_wrap">
                             <label for="confirm_text">Ville</label>
                             <input type="text" name="confirm text" class="input" id="confirm_text">
+                        </div>
+                        <div class="input_wrap">
                             <label for="confirm_text">Code Postale</label>
                             <input type="text" name="confirm text" class="input" id="confirm_text">
                         </div>
@@ -81,30 +94,28 @@
                             <input type="text" name="User Name" class="input" id="user_name">
                         </div>
                         <div class="input_wrap">
-                            <label for="first_name">Total gross weight</label>
+                            <label for="first_name">Total gross weight (KG)</label>
                             <input type="number" name="First Name" class="input" id="first_name">
                         </div>
                         <div class="input_wrap">
-                            <label for="last_name">Shipment type</label>
-                            <select type="text" name="Last Name" class="input" id="last_name">
-                                <option value="parcel">Parcel</option>
-                                <option value="document">Document</option>
+                            <label for="type">Shipment type</label>
+                            <select class="input" name="type" id="type">
+                                <option value="Parcel">Parcel</option>
+                                <option value="Document">Document</option>
                             </select>
                         </div>
                     </div>
                 
             </div>
             <div class="form_3 data_info" style="display: none;">
-                <h2>Professional Info</h2>
+                <div class="input_wrap">
+                    <label for="payment">Payment options</label>
+                    <select name="payment" id="payment" class="input">
+                        <option value="Je vais payer">Je vais payer</option>
+                        <option value="Le destinataire va payer">Le destinataire va payer</option>
+                    </select>
+                </div>
                 
-                    <div class="form_container">
-                        <div class="option-1">
-                            <p>Je vais Payer</p>
-                        </div>
-                        <div class="option-2">
-                            <p>Le desitinataire va payer</p>
-                        </div>
-                    </div>
                 
             </div>
         </div>
