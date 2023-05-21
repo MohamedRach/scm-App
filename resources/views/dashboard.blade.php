@@ -1,17 +1,69 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="<?php echo asset('css/dashboard.css')?>">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grid-container">
+        <main class="main-container">
+            <div class="main-title">
+              <h2>DASHBOARD</h2>
             </div>
-        </div>
+    
+            <div class="main-cards">
+    
+              <div class="card">
+                <div class="card-inner">
+                  <h3>PRODUCTS</h3>
+                  <span class="material-icons-outlined">inventory_2</span>
+                </div>
+                <h1>249</h1>
+              </div>
+    
+              <div class="card">
+                <div class="card-inner">
+                  <h3>CATEGORIES</h3>
+                  <span class="material-icons-outlined">category</span>
+                </div>
+                <h1>25</h1>
+              </div>
+    
+              <div class="card">
+                <div class="card-inner">
+                  <h3>CUSTOMERS</h3>
+                  <span class="material-icons-outlined">groups</span>
+                </div>
+                <h1>1500</h1>
+              </div>
+    
+              <div class="card">
+                <div class="card-inner">
+                  <h3>ALERTS</h3>
+                  <span class="material-icons-outlined">notification_important</span>
+                </div>
+                <h1>56</h1>
+              </div>
+    
+            </div>
+    
+            <div class="charts">
+    
+              <div class="charts-card">
+                <h2 class="chart-title">Top 5 Products</h2>
+                <div id="bar-chart"></div>
+              </div>
+    
+              <div class="charts-card">
+                <h2 class="chart-title">Purchase and Sales Orders</h2>
+                <div id="area-chart"></div>
+              </div>
+    
+            </div>
+          </main>
     </div>
-</x-app-layout>
+</body>
+</html>

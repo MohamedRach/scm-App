@@ -23,13 +23,9 @@ Route::get('/', function () {
 
 //admin routes
 Route::get('/dashboard', function () {
-    if(!Gate::allows('access-admin')){
-        return view('logout');
-    }else{
-        return view('dashboard');
-    }
+    return view('dashboard');
     
-})->middleware(['auth', 'verified'])->name('dashboard');
+});
 
 
 Route::get("/tournée", [tournéeController::class, "index"])->name('tournée.index');
@@ -45,9 +41,7 @@ Route::get("/user/retour", [retourController::class, 'create'])->name("retour.cr
 Route::post("/user/retour", [retourController::class, 'store'])->name("retour.store");
 Route::get('/retour', [retourController::class, 'index'])->name("retour.index");
 Route::get("retour/{id}", [retourController::class, 'destroy'])->name("retour.destroy");
-Route::get("/dashboard", function(){
-    return view("welcome");
-});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

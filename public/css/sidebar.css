@@ -63,6 +63,16 @@ body {
   justify-content: space-between;
   padding: 16px;
 }
+.nav__logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.nav__logo span {
+  color: #3685fb;;
+}
 .sidebar-list {
   list-style-type: none;
   padding: 0;

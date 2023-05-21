@@ -44,31 +44,23 @@
                             <td><p class="status red">Non livré</p></td>
                             <td>3</td>
                             <td>1104</td>
-                            <td><a href="#">Modifier</a><br><a href="#">Supprimer</a></td>
+                            <td><a class="update">Modifier</a><br><a href="#">Supprimer</a></td>
                         </tr>
                         <tr class="childTableRow">
                             <td colspan="16">
                                 <h5>details de la commande</h5>
-                                <table class="table">
-                                    <thead>
+                                <table class="details" align="center">
                                     <tr>
-                                        <th>Date</th>
-                                        <th>Description</th>
-                                        <th>Amount</th>
+                                        <td>street name: j5 amal 1</td>
+                                        <td>building number: 123</td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>2021-03-01</td>
-                                            <td>Goods</td>
-                                            <td>100.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2021-03-02</td>
-                                            <td>Materials</td>
-                                            <td>200.00</td>
-                                        </tr>
-                                    </tbody>
+                                    <tr>
+                                        <td>shipment content: ps5</td>
+                                        <td>shipment type: Parcel</td>
+                                    </tr>
+                                    <tr>
+                                        <td>payment options: sender</td>
+                                    </tr>
                                 </table>
                             </td>
                         </tr>
@@ -88,6 +80,40 @@
                     </tbody>
                 </table>
             </div>
+            <div id="contactForm">
+
+                <h1>Modifier commande</h1>
+                
+                <form action="#">
+                    <div class="formcontainer">
+                        <input placeholder="building number" type="text" required />
+                        <input placeholder="Street Name" type="email" required />
+                        <input placeholder="Code postal" type="text" required />
+                        <input placeholder="Ville" type="text" required />
+                        <input placeholder="Shipment content" type="text" required />
+                        <input placeholder="Poids" type="text" required />
+                        <input placeholder="Prix" type="number" required />
+                        <select name="type" id="type">
+                            <option value="">shipment type</option>
+                            <option value="parcel">Parcel</option>
+                            <option value="document">document</option>
+                        </select>
+                        <select name="status" id="status">
+                            <option value="">état</option>
+                            <option value="non livré">non livré</option>
+                            <option value="en cours">document</option>
+                        </select>
+                        <select name="tournée" id="tournée">
+                            <option value="">tournée</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <input class="formBtn" type="submit"  value="Modifier"/>
+                    </div>
+                        
+                </form>
+            </div>
+                
         </div>
         <script src="//code.jquery.com/jquery.js"></script>
         <script src="<?php echo asset('js/table.js') ?>"></script>

@@ -104,18 +104,60 @@ tr:nth-child(even) {
     background-color: #c8e6c9;
     color: #388e3c;
 }
-.expandChildTable:before {
-    content: "+";
-    display: block;
-    cursor: pointer;
-}
-.expandChildTable.selected:before {
-    content: "-";
-}
+
 .childTableRow {
     display: none;
 }
-.childTableRow table {
-    border: 2px solid #555;
+.childTableRow .details {
+    margin-left: 150px;
     width: 800px;
 }
+
+#contactForm { 
+    display: none;
+  
+    border: 6px solid #2869ff;; 
+    padding: 2em;
+    width: 1000px;
+    height: 500px;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%)
+    
+  }
+.formcontainer{
+    display: grid;
+    grid-template-columns: [first] 50% [second] 50%  [end];
+ 	grid-template-rows: [row1-start] 25% [row1-end] 25% [third-line] 25% [fourth-line] auto [last-line];
+    justify-items: center;
+}
+input, select{ 
+    font-family: inherit; 
+    text-transform: inherit; 
+    font-size: inherit;
+    display: block; 
+    width: 280px; 
+    height: 35px;
+}
+option:first{
+    color:#999;
+}
+  
+.formBtn { 
+    width: 600px;
+    text-align: center;
+    display: inline-block;
+    background: #2869ff;;
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.2em;
+    border: none;
+    height: 30px;
+    position: relative;
+    left: 220px;
+    top: 30px;
+  }
