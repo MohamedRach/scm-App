@@ -19,8 +19,11 @@
         <li class="link"><a href="#">Send a shipment</a></li>
         <li class="link"><a href="#">About Us</a></li>
       </ul>
-      <button class="btn">Login</button>
-      <button class="btn">SignUp</button>
+      <div>
+        <button class="btn">Login</button>
+        <button class="btn">SignUp</button>
+      </div>
+      
     </nav>
     <header>
       <div class="section__container header__container">
@@ -176,7 +179,7 @@
     <footer class="footer">
       <div class="section__container footer__container">
         <div class="footer__col">
-          <h3>Pathway<span>.</span></h3>
+          <h3>EnsiDelivery<span>.</span></h3>
           <p>
             Explore your suitable and dream places around the world. Here you
             can find your right destination.
@@ -192,15 +195,14 @@
         <div class="footer__col">
           <h4>Address</h4>
           <p>
-            <span>Address:</span> 280 Wilson Street, Cima, California, 92323,
-            United States
+            <span>Address:</span> Ensias, avenue Mohamed Ben Abdellah Rabat, Morocco
           </p>
-          <p><span>Email:</span> info@pathway.com</p>
-          <p><span>Phone:</span> +91 9876543210</p>
+          <p><span>Email:</span> info@ensidelivery.com</p>
+          <p><span>Phone:</span> +212645985689</p>
         </div>
       </div>
       <div class="footer__bar">
-        Copyright © 2023 Web Design Mastery. All rights reserved.
+        Copyright © Ensias IDSIT. All rights reserved.
       </div>
     </footer>
   </body>

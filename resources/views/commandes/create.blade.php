@@ -9,22 +9,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="nav-bar">
-        <nav>
-            <div class="logo">
-                <img src="" alt="logo">
-            </div>
-            <div class="links">
-                <p><a href="/">Home</a></p>
-                <p><a href="/user/commande">Send a Shipment</a></p>
-                <p><a href="#">About</a></p>
-            </div>
-            <div class="buttons">
-                <button class="SignUp">Sign Up</button>
-                <button class="login">Login</button>
-            </div>
-        </nav>
-    </div>
+    <nav>
+        <div class="nav__logo">EnsiDelivery<span>.</span></div>
+            <ul class="nav__links">
+            <li class="link"><a href="#">Home</a></li>
+            <li class="link"><a href="#">Send a shipment</a></li>
+            <li class="link"><a href="#">About Us</a></li>
+            </ul>
+        <div>
+            <button class="btn">LogOut</button>
+        </div>
+        
+    </nav>
     
 
 <div class="wrapper">
@@ -111,8 +107,8 @@
                 <div class="input_wrap">
                     <label for="payment">Payment options</label>
                     <select name="payment" id="payment" class="input">
-                        <option value="Je vais payer">Je vais payer</option>
-                        <option value="Le destinataire va payer">Le destinataire va payer</option>
+                        <option value="sender">Je vais payer</option>
+                        <option value="reciever">Le destinataire va payer</option>
                     </select>
                 </div>
                 

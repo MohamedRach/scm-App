@@ -1,76 +1,81 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 *{
   margin: 0;
   padding: 0%;
 }
 :root {
-  --app-bg: white;
-  --sidebar: rgba(21, 30, 47,1);
-  --sidebar-main-color: #fff;
-  --table-border: #1a2131;
-  --table-header: #1a2131;
-  --app-content-main-color: #fff;
-  --sidebar-link: #fff;
-  --sidebar-active-link: #1d283c;
-  --sidebar-hover-link: #1a2539;
-  --action-color: #2869ff;
-  --action-color-hover: #6291fd;
-  --app-content-secondary-color: #1d283c;
-  --filter-reset: #2c394f;
-  --filter-shadow: rgba(16, 24, 39, 0.8) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  --font-family: poppings;
+  --primary-color: #3685fb;
+  --primary-color-dark: #2f73d9;
+  --secondary-color: #fafcff;
+  --text-dark: #0d213f;
+  --text-light: #767268;
+  --extra-light: #ffffff;
+  --max-width: 1200px;
 }
 body{
   background-color: #EEF1F5;
+  font-family: "Poppins", sans-serif;
 }
-.nav-bar{
-  height: 70px;
-  width: 100%;
-  border-bottom: 1px solid rgb(183, 182, 182);
-  background-color: white;
+.btn {
+	padding: 0.75rem 2rem;
+	outline: none;
+	border: none;
+	font-size: 1rem;
+	color: var(--extra-light);
+	background-color: var(--primary-color);
+	border-radius: 5rem;
+	cursor: pointer;
+	transition: 0.3s;
+	
 }
-nav{
-  display: flex;
-  flex-direction: row;
-}
-.links{
-  display: flex;
-  flex-direction: row;
-  column-gap: 90px;
-  justify-content: center;
-  margin-left: 350px;
-  margin-top: 20px;
-  font-family: Poppins;
-  font-weight: bold;
   
+.btn:hover {
+	background-color: var(--primary-color-dark);
 }
+  
 a{
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
 }
-
-.buttons{
-  margin-top: 13px;
-  margin-left: 300px;
+nav {
+	padding: 1rem;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: var(--max-width);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
-.SignUp{
-  padding: 8px 10px;
-  background-color: var(--action-color);
-  font-family: Poppins;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  margin-right: 20px;
+  
+.nav__logo {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: var(--text-dark);
+	cursor: pointer;
 }
-.login{
-  padding: 8px 10px;
-  background-color: var(--action-color);
-  font-family: Poppins;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  
+.nav__logo span {
+	color: var(--primary-color);
 }
-
+  
+.nav__links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+  
+.link a {
+	padding: 0 1rem;
+	color: var(--text-dark);
+	transition: 0.3s;
+}
+  
+.link a:hover {
+	color: var(--primary-color);
+}
 .wrapper{
 	width: 750px;
 	max-width: 100%;
@@ -78,6 +83,7 @@ a{
 	margin: 50px auto 0;
 	padding: 50px;
 	border-radius: 5px;
+	margin-top: 100px;
 }
 
 .wrapper .header{
@@ -130,11 +136,11 @@ a{
 }
 
 .wrapper .header ul li.active:before{
-	background: var(--sidebar);
+	background: var(--text-dark);
 }
 
 .wrapper .header ul li.active p{
-	background: var(--sidebar);
+	background: var(--text-dark);
 }
 
 .wrapper .form_wrap{
@@ -202,7 +208,7 @@ a{
 .wrapper .btns_wrap .common_btns button{
 	border: 0;
 	padding: 12px 15px;
-	background: black;
+	background: var(--primary-color);
 	color: white;
 	width: 135px;
 	justify-content: center;
@@ -219,34 +225,12 @@ a{
 	column-gap: 50px;
 	align-items: center;
 }
-.parcel{
-	border: 2px solid black;
-	padding: 75px 35px;
-	position: relative;
-	top: 45px;
-	left: 200px;
-	cursor: pointer;
-}
-.parcel:hover{
-	border-color: red;
-	color: red;
-}
-.document{
-	border: 2px solid black;
-	padding: 75px 30px;
-	position: relative;
-	left: 250px;
-	top: 45px;
-	cursor: pointer;
-}
-.document:hover{
-	border-color: red;
-	color: red;
-}
+
+
 .wrapper .btns_wrap .common_btns input{
 	border: 0;
 	padding: 12px 15px;
-	background: black;
+	background: var(--primary-color);
 	color: white;
 	width: 135px;
 	justify-content: center;
@@ -259,7 +243,7 @@ a{
 }
 
 .wrapper .btns_wrap .common_btns button.btn_back{
-	background: grey;
+	background: var(--text-dark);
 	position: relative;
 	right: 200px;
 }
@@ -281,14 +265,7 @@ a{
 	margin-right: 10px;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_next:hover,
-.wrapper .btns_wrap .common_btns input.btn_done:hover{
-	background: red;
-}
 
-.wrapper .btns_wrap .common_btns button.btn_back:hover{
-	background: red;
-}
 
 .modal_wrapper{
 	position: fixed;
