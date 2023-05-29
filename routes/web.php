@@ -42,6 +42,13 @@ Route::post("/user/retour", [retourController::class, 'store'])->name("retour.st
 Route::get('/retour', [retourController::class, 'index'])->name("retour.index");
 Route::get("retour/{id}", [retourController::class, 'destroy'])->name("retour.destroy");
 
+
+
+// user routes
+Route::get('/user', function () {
+    return view('user.Dashboard');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

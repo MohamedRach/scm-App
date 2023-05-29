@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class chauffeur extends Model
 {
     use HasFactory;
+    protected $primaryKey = "id_chauffeur";
 }

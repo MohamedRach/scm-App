@@ -45,59 +45,60 @@
 		</ul>
 	</div>
 	<div class="form_wrap">
-        <form action="">
+        <form action="{{ route('commandes.store') }}" method="POST">
+            @csrf
             <div class="form_1 data_info">
                     <h2>Détails du Destinataire</h2>
                 
                     <div class="form_container">
                         <div class="input_wrap">
-                            <label for="email">Nom</label>
-                            <input type="text" name="Email Address" class="input" id="email">
+                            <label for="nom_destinataire">Nom</label>
+                            <input type="text" name="nom_destinataire" class="input">
                         </div>
                         <div class="input_wrap">
-                            <label for="email">Prénom</label>
-                            <input type="text" name="Email Address" class="input" id="email">
+                            <label for="prenom_destinataire">Prénom</label>
+                            <input type="text" name="prenom_destinataire" class="input">
                         </div>
                         <div class="input_wrap">
-                            <label for="password">Numero de Télephone</label>
-                            <input type="password" name="password" class="input" id="password">
+                            <label for="telephone">Numero de Télephone</label>
+                            <input type="text" name="telephone" class="input">
                         </div>
                         <div class="input_wrap">
-                            <label for="confirm_password">building number</label>
-                            <input type="text" name="confirm text" class="input" id="confirm_text">
+                            <label for="N°_immeuble">N° immeuble</label>
+                            <input type="text" name="N°_immeuble" class="input">
                         </div>
                         <div class="input_wrap">
-                            <label for="confirm_password">Street Name</label>
-                            <input type="text" name="confirm text" class="input" id="confirm_text">
+                            <label for="quartier">Quartier</label>
+                            <input type="text" name="quartier" class="input" id="confirm_text">
                         </div>
                         <div class="input_wrap">
-                            <label for="confirm_text">Ville</label>
-                            <input type="text" name="confirm text" class="input" id="confirm_text">
+                            <label for="ville">Ville</label>
+                            <input type="text" name="ville" class="input" id="confirm_text">
                         </div>
                         <div class="input_wrap">
-                            <label for="confirm_text">Code Postale</label>
-                            <input type="text" name="confirm text" class="input" id="confirm_text">
+                            <label for="code_postal">Code Postale</label>
+                            <input type="text" name="code_postal" class="input" id="confirm_text">
                         </div>
                     </div>
                 
             </div>
             <div class="form_2 data_info" style="display: none;">
-                <h2>Shipment Info</h2>
+                <h2>Info d'expédition</h2>
                 
                     <div class="form_container">
                         <div class="input_wrap">
-                            <label for="user_name">Shipment content</label>
-                            <input type="text" name="User Name" class="input" id="user_name">
+                            <label for="contenue">contenue d'expédition</label>
+                            <input type="text" name="contenue" class="input">
                         </div>
                         <div class="input_wrap">
-                            <label for="first_name">Total gross weight (KG)</label>
-                            <input type="number" name="First Name" class="input" id="first_name">
+                            <label for="poid">Poid Total (KG)</label>
+                            <input type="number" name="poid" class="input">
                         </div>
                         <div class="input_wrap">
-                            <label for="type">Shipment type</label>
+                            <label for="type">type d'expédition</label>
                             <select class="input" name="type" id="type">
-                                <option value="Parcel">Parcel</option>
-                                <option value="Document">Document</option>
+                                <option value="colis">Colis</option>
+                                <option value="document">Document</option>
                             </select>
                         </div>
                     </div>
@@ -105,10 +106,10 @@
             </div>
             <div class="form_3 data_info" style="display: none;">
                 <div class="input_wrap">
-                    <label for="payment">Payment options</label>
-                    <select name="payment" id="payment" class="input">
-                        <option value="sender">Je vais payer</option>
-                        <option value="reciever">Le destinataire va payer</option>
+                    <label for="payment">Options de Payment</label>
+                    <select name="paiment" id="payment" class="input">
+                        <option value="expéditeur">Je vais payer</option>
+                        <option value="destinataire">Le destinataire va payer</option>
                     </select>
                 </div>
                 
@@ -117,14 +118,14 @@
         </div>
         <div class="btns_wrap">
             <div class="common_btns form_1_btns">
-                <button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+                <button type="button" class="btn_next">Suivant <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
             </div>
             <div class="common_btns form_2_btns" style="display: none;">
-                <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
-                <button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+                <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Retour</button>
+                <button type="button" class="btn_next">Suivant <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
             </div>
             <div class="common_btns form_3_btns" style="display: none;">
-                <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+                <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Retour</button>
                 <input type="submit" class="btn_done" value="Done">
             </div>
         </div>
@@ -134,7 +135,7 @@
 	<div class="shadow"></div>
 	<div class="success_wrap">
 		<span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
-		<p>You have successfully completed the process.</p>
+		<p>Vous avez terminé le processus avec succès.</p>
 	</div>
 </div>
 

@@ -15,13 +15,13 @@
     <nav>
       <div class="nav__logo">EnsiDelivery<span>.</span></div>
       <ul class="nav__links">
-        <li class="link"><a href="#">Home</a></li>
-        <li class="link"><a href="#">Send a shipment</a></li>
+        <li class="link"><a href="/">Home</a></li>
+        <li class="link"><a href="{{ route('commandes.create') }}">Send a shipment</a></li>
         <li class="link"><a href="#">About Us</a></li>
       </ul>
       <div>
-        <button class="btn">Login</button>
-        <button class="btn">SignUp</button>
+        <button class="btn"><a href="{{ route('login') }}">Login</a></button>
+        <button class="btn"><a href="{{ route('userRegister') }}">SignUp</a></button>
       </div>
       
     </nav>
@@ -41,7 +41,7 @@
               clients.
             </p>
             <div class="action__btns">
-              <button class="btn">Send a Shipment</button>
+              <button class="btn"><a href="{{ route('commandes.create') }}">Send a shipment</a></button>
             </div>
           </div>
         </div>

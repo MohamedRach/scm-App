@@ -29,3 +29,17 @@ $(function() {
     });
     
   });
+
+  $(document).ready(function() {
+    $('.retour').click(function() {
+      $('.retourTable').show(); // Show the clicked commandes item
+      $('.commandeTable').hide(); // Hide all retour items
+    });
+  });
+
+  $(document).ready(function() {
+    $('.commande').click(function() {
+      $('.commandeTable').show(); // Show the clicked commandes item
+      $('.retourTable').hide(); // Hide all retour items
+    });
+  });

@@ -11,9 +11,7 @@
             <div class="title">
                 <h1>Commandes</h1>
             </div>
-            <div class="buttons">
-                <button class="trier">trier</button>
-            </div>
+            
             <div class="table-content">
                 <table class="table">
                     <thead>
@@ -33,17 +31,29 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($commandes as $commande )
                         <tr class="drop">
-                            <td>1</td>
-                            <td>Rue Ahmed Saadi, Casa..</td>
-                            <td>Casablanca</td>
-                            <td>100011</td>
-                            <td>13</td>
-                            <td>123</td>
-                            <td>0654374567</td>
+                            <td>{{ $commande->id_commande }}</td>
+                            <td>{{ $commande->quartier }} {{ $commande->N°_immeuble }}</td>
+                            <td>{{ $commande->ville }}</td>
+                            <td>{{ $commande->code_postal }}</td>
+                            <td>{{ $commande->poid }}</td>
+                            <td>{{ $commande->prix }}</td>
+                            <td>{{ $commande->telephone }}</td>
+                            @if ($commande->etat == "non livré")
                             <td><p class="status red">Non livré</p></td>
-                            <td>3</td>
-                            <td>1104</td>
+                            @elseif ($commande->etat == "en cours")
+                            <td><p class="status yellow">en cours</p></td>
+                            @else
+                            <td><p class="status green">livré</p></td>
+                            @endif
+                            @if ($commande->id_tournée == null)
+                            <td>Null</td> 
+                            @else
+                            <td>{{ $commande->id_tournée }}</td>   
+                            @endif
+                            
+                            <td>{{ $commande->id_client }}</td>
                             <td><a class="update">Modifier</a><br><a href="#">Supprimer</a></td>
                         </tr>
                         <tr class="childTableRow">
@@ -51,32 +61,16 @@
                                 <h5>details de la commande</h5>
                                 <table class="details" align="center">
                                     <tr>
-                                        <td>street name: j5 amal 1</td>
-                                        <td>building number: 123</td>
+                                        <td>contenue d'expédition: {{ $commande->contenue }}</td>
+                                        <td>type d'expédition: {{ $commande->type }}</td>
                                     </tr>
                                     <tr>
-                                        <td>shipment content: ps5</td>
-                                        <td>shipment type: Parcel</td>
-                                    </tr>
-                                    <tr>
-                                        <td>payment options: sender</td>
+                                        <td>option de paiment: {{ $commande->paiment }}</td>
                                     </tr>
                                 </table>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Rue Ahmed Saadi, Casa..</td>
-                            <td>Casablanca</td>
-                            <td>100011</td>
-                            <td>13</td>
-                            <td>123</td>
-                            <td>0654374567</td>
-                            <td><p class="status yellow">en cours</p></td>
-                            <td>3</td>
-                            <td>1104</td>
-                            <td><a href="#">Modifier</a><br><a href="#">Supprimer</a></td>
-                        </tr>
+                        </tr>  
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -86,27 +80,29 @@
                 
                 <form action="#">
                     <div class="formcontainer">
-                        <input placeholder="building number" type="text" required />
-                        <input placeholder="Street Name" type="email" required />
-                        <input placeholder="Code postal" type="text" required />
-                        <input placeholder="Ville" type="text" required />
-                        <input placeholder="Shipment content" type="text" required />
-                        <input placeholder="Poids" type="text" required />
-                        <input placeholder="Prix" type="number" required />
+                        <input placeholder="N° immeuble" type="text" name="N°_immeuble" required />
+                        <input placeholder="Quartier" type="email" name="quartier" required />
+                        <input placeholder="Code postal" type="text" name="code_postal" required />
+                        <input placeholder="Ville" type="text" name="ville" required />
+                        <input placeholder="Contenue d'expédition" type="text" name="contenue" required />
+                        <input placeholder="Poid" type="text" name="poid" required />
+                        <input placeholder="Prix" type="number" name="prix" required />
                         <select name="type" id="type">
-                            <option value="">shipment type</option>
-                            <option value="parcel">Parcel</option>
-                            <option value="document">document</option>
+                            <option value="">type d'expédition</option>
+                            <option value="colis">Colis</option>
+                            <option value="document">Document</option>
                         </select>
-                        <select name="status" id="status">
+                        <select name="etat" id="status">
                             <option value="">état</option>
                             <option value="non livré">non livré</option>
-                            <option value="en cours">document</option>
+                            <option value="en cours">en cours</option>
+                            <option value="livré">livré</option>
                         </select>
                         <select name="tournée" id="tournée">
                             <option value="">tournée</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                            @foreach ($tournees as $tournee )
+                            <option value="{{ $tournee->id_tournée }}">{{ $tournee->id_tournée }}</option>  
+                            @endforeach
                         </select>
                         <input class="formBtn" type="submit"  value="Modifier"/>
                     </div>

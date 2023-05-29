@@ -86,7 +86,9 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
-
+button a{
+  color: white;
+}
 .nav__logo {
   font-size: 1.2rem;
   font-weight: 600;

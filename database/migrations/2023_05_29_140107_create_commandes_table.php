@@ -14,9 +14,18 @@ return new class extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->id("id_commande");
             $table->timestamps();
-            $table->string("adresse_livraison");
-            $table->float("poids");
+            $table->string('nom_destinataire');
+            $table->string('prenom_destinataire');
+            $table->integer('telephone');
+            $table->smallInteger("N°_immeuble");
+            $table->string('quartier');
+            $table->string('ville');
+            $table->mediumInteger('code_postal');
+            $table->string('contenue');
+            $table->float("poid");
             $table->float("prix");
+            $table->string('type');
+            $table->string('paiment');
             $table->unsignedBigInteger("id_client");
             $table->unsignedBigInteger("id_tournée")->unsigned()->nullable();
             $table->foreign("id_client")->references("id")->on("users");
