@@ -1,6 +1,7 @@
 
 <head>
     <link rel="stylesheet" href="<?php echo asset('css/table.css')?>">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 </head> 
 <body>
     
@@ -54,7 +55,7 @@
                             @endif
                             
                             <td>{{ $commande->id_client }}</td>
-                            <td><a class="update">Modifier</a><br><a href="#">Supprimer</a></td>
+                            <td class="actions"><a target="_blank" href="{{ route('commandes.edit', $commande->id_commande) }}"><i class="ri-edit-fill edit"></i></a><br><a href="{{ route('commandes.destroy', $commande->id_commande) }}"><i class="ri-delete-bin-6-line delete"></i></a></td>
                         </tr>
                         <tr class="childTableRow">
                             <td colspan="16">
@@ -74,41 +75,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="contactForm">
-
-                <h1>Modifier commande</h1>
-                
-                <form action="#">
-                    <div class="formcontainer">
-                        <input placeholder="N° immeuble" type="text" name="N°_immeuble" required />
-                        <input placeholder="Quartier" type="email" name="quartier" required />
-                        <input placeholder="Code postal" type="text" name="code_postal" required />
-                        <input placeholder="Ville" type="text" name="ville" required />
-                        <input placeholder="Contenue d'expédition" type="text" name="contenue" required />
-                        <input placeholder="Poid" type="text" name="poid" required />
-                        <input placeholder="Prix" type="number" name="prix" required />
-                        <select name="type" id="type">
-                            <option value="">type d'expédition</option>
-                            <option value="colis">Colis</option>
-                            <option value="document">Document</option>
-                        </select>
-                        <select name="etat" id="status">
-                            <option value="">état</option>
-                            <option value="non livré">non livré</option>
-                            <option value="en cours">en cours</option>
-                            <option value="livré">livré</option>
-                        </select>
-                        <select name="tournée" id="tournée">
-                            <option value="">tournée</option>
-                            @foreach ($tournees as $tournee )
-                            <option value="{{ $tournee->id_tournée }}">{{ $tournee->id_tournée }}</option>  
-                            @endforeach
-                        </select>
-                        <input class="formBtn" type="submit"  value="Modifier"/>
-                    </div>
-                        
-                </form>
-            </div>
+            
                 
         </div>
         <script src="//code.jquery.com/jquery.js"></script>

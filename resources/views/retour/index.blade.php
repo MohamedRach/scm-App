@@ -1,6 +1,7 @@
 
 <head>
     <link rel="stylesheet" href="<?php echo asset('css/table.css')?>">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 </head> 
 <body>
     
@@ -28,43 +29,23 @@
                     <tr>
                         <td>{{ $retour->id_retour }}</td>
                         <td>{{ $retour->motif }}</td>
-                        @if ($commande->etat == "non livré")
+                        @if ($retour->etat == "non livré")
                         <td><p class="status red">Non livré</p></td>
-                        @elseif ($commande->etat == "en cours")
+                        @elseif ($retour->etat == "en cours")
                         <td><p class="status yellow">en cours</p></td>
                         @else
                         <td><p class="status green">livré</p></td>
                         @endif
-                        <td>{{ $retour->id_commande }}</td>
+                        <td>{{ $retour->id_retour }}</td>
                         <td>{{ $retour->id_client }}</td>
-                        <td><a href="#">Modifier</a><br><a href="#">Supprimer</a></td>
+                        <td class="actions"><a  href="{{ route('retour.edit', $retour->id_retour) }}"><i class="ri-edit-fill edit"></i></a><a href="{{ route('retour.destroy', $retour->id_retour) }}"><i class="ri-delete-bin-6-line delete"></i></a></td>
                     </tr>
                     @endforeach
                    
                 </tbody>
             </table>
         </div>
-        <div id="contactForm">
-
-            <h1>Modifier Retour</h1>
-            
-            <form action="#">
-                <div class="formcontainer">
-                    <select name="status" id="status">
-                        <option value="">état</option>
-                        <option value="non livré">non livré</option>
-                        <option value="en cours">document</option>
-                    </select>
-                    <select name="tournée" id="tournée">
-                        <option value="">tournée</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
-                    <input class="formBtn" type="submit"  value="Modifier"/>
-                </div>
-                    
-            </form>
-        </div>
+        
     </div>
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="<?php echo asset('js/table.js') ?>"></script>

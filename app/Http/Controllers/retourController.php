@@ -37,7 +37,7 @@ class retourController extends Controller
     {
         $retour = new retour();
         $retour->motif = request("motif");
-        $retour->etat = "non retourné";
+        $retour->etat = "non livré";
         $retour->id_commande = request("commande");
         $retour->id_client = Auth::id();
         
@@ -55,9 +55,11 @@ class retourController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(retour $retour)
+    public function edit($id)
     {
-        //
+        $retour = retour::findOrfail($id);
+        
+        return view('retour.edit', ["retour" => $retour]);
     }
 
     /**
@@ -65,7 +67,11 @@ class retourController extends Controller
      */
     public function update(Request $request, retour $retour)
     {
-        //
+        $retour = retour::findOrfail(request('id'));
+        $retour->etat = request('etat');
+
+        $retour->save();
+        return redirect('/retour');
     }
 
     /**
@@ -75,5 +81,7 @@ class retourController extends Controller
     {
         $retour = retour::findorfail($id);
         $retour->delete();
+
+        return redirect('/retour');
     }
 }

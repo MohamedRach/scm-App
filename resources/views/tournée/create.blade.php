@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?php echo asset('css/form.css')?>">
+    <link rel="stylesheet" href="<?php echo asset('css/formRetour.css')?>">
     <title>Document</title>
 </head>
 <body>
@@ -33,8 +33,11 @@
                             @endforeach
                         </select>
                     </div>
+                    
                 </div>
-                
+                <div>
+                    <a class="chauffeur" href="{{ route('chauffeur.create') }}">Ajouter un chauffeur</a>
+                </div>
                 <div class="inputfield">
                     <button class="btn">Ajouter tournée</button>
                 </div>

@@ -78,6 +78,18 @@ th{
 td{
     padding: 0.5rem 0.7rem;
 }
+.actions{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+.delete{
+    color: red;
+}
+.edit{
+    color: #2869ff;
+}
 a {
     text-decoration: none;
     color: black;
@@ -114,17 +126,16 @@ tr:nth-child(even) {
 }
 
 #contactForm { 
-    display: none;
   
     border: 6px solid #2869ff;; 
-    padding: 2em;
-    width: 1000px;
-    height: 500px;
+    padding: 1em;
+    width: 800px;
+    height: 600px;
     text-align: center;
     background: #fff;
     position: fixed;
     top:50%;
-    left:50%;
+    left:55%;
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%)
     
@@ -132,8 +143,12 @@ tr:nth-child(even) {
 .formcontainer{
     display: grid;
     grid-template-columns: [first] 50% [second] 50%  [end];
- 	grid-template-rows: [row1-start] 25% [row1-end] 25% [third-line] 25% [fourth-line] auto [last-line];
+ 	grid-template-rows: [row1-start] 20% [row1-end] 20% [third-line] 20% [fourth-line] auto [last-line];
     justify-items: center;
+}
+label{
+    text-align: left;
+    font-size: 10px;
 }
 input, select{ 
     font-family: inherit; 

@@ -19,7 +19,8 @@ class tournéeController extends Controller
     }
     public function index()
     {
-        return view('tournée.index');
+        $tournées = tournee::all();
+        return view('tournée.index', ["tournées" => $tournées]);
     }
 
     /**
@@ -40,10 +41,10 @@ class tournéeController extends Controller
         $tournee->date_départ = request("date_départ");
         $tournee->date_retour = request("date_retour");
         $tournee->id_chauffeur = request("chauffeur");
-
+        $tournee->etat = "depart";
         $tournee->save();
 
-        return redirect('/admin/tournée');
+        return redirect('/tournée');
     }
 
     /**
@@ -57,9 +58,11 @@ class tournéeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(tournee $tournee)
+    public function edit($id)
     {
-        //
+        $tournee = tournee::findOrfail($id);
+        $chauffeurs = chauffeur::all();
+        return view('tournée.edit', ["tournées" => $tournee, "chauffeurs" => $chauffeurs]);
     }
 
     /**
@@ -67,14 +70,25 @@ class tournéeController extends Controller
      */
     public function update(Request $request, tournee $tournee)
     {
-        //
+        $tournee = tournee::findOrfail(request('id'));
+        $tournee->date_départ = request('date_depart');
+        $tournee->date_retour = request('date_retour');
+        $tournee->id_chauffeur = request('chauffeur');
+        $tournee->etat = request('etat');
+        
+
+        $tournee->save();
+        return redirect('/tournée');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(tournee $tournee)
+    public function destroy($id)
     {
-        //
+        $tournee = tournee::findOrfail($id);
+        $tournee->delete();
+
+        return redirect("/tournée");
     }
 }
