@@ -153,6 +153,19 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'providers' => [
+
+        // Service Provider DomPDF
+        Barryvdh\DomPDF\ServiceProvider::class
+    
+    ],
+    
+    'aliases' => Facade::defaultAliases()->merge([
+    
+        // Façade Laravel-dompdf
+        "PDF" => Barryvdh\DomPDF\Facade::class
+        
+    ])->toArray(),
 
     'providers' => [
 

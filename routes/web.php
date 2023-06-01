@@ -42,7 +42,8 @@ Route::post("/user/commande", [commandesController::class, "store"])->name("comm
 Route::get ("/commandes", [commandesController::class, "index"])->name("commandes.index");
 Route::get("/commandes/edit/{id_commande}", [commandesController::class, "edit"])->name("commandes.edit");
 Route::post("/commandes/update", [commandesController::class, "update"])->name("commandes.update");
-Route::get("/commades/{id_commande}", [commandesController::class, "destroy"])->name("commandes.destroy");
+Route::get("/commandes/{id_commande}", [commandesController::class, "destroy"])->name("commandes.destroy");
+Route::get("/commandes/pdf/{id}", [commandesController::class, "createPdf"])->name("commandes.bon_livraison");
 
 Route::get("/user/retour", [retourController::class, 'create'])->name("retour.create");
 Route::post("/user/retour", [retourController::class, 'store'])->name("retour.store");

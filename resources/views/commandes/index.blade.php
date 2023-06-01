@@ -62,12 +62,17 @@
                                 <h5>details de la commande</h5>
                                 <table class="details" align="center">
                                     <tr>
-                                        <td>contenue d'expédition: {{ $commande->contenue }}</td>
-                                        <td>type d'expédition: {{ $commande->type }}</td>
+                                        <td><span class="tit">contenue d'expédition:</span> {{ $commande->contenue }}</td>
+                                        <td><span class="tit">type d'expédition:</span> {{ $commande->type }}</td>
                                     </tr>
                                     <tr>
-                                        <td>option de paiment: {{ $commande->paiment }}</td>
+                                        <td><span class="tit">option de paiment:</span> {{ $commande->paiment }}</td>
                                     </tr>
+                                    @if($commande->etat == "livré")
+                                    <tr>
+                                        <td class="bon"><a href="{{ route('commandes.bon_livraison', $commande->id_commande) }}">télécharger le bon de livraison</a></td>
+                                    </tr>
+                                    @endif
                                 </table>
                             </td>
                         </tr>  

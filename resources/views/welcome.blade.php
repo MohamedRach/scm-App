@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="<?php echo asset('css/home.css')?>" />
-    <title>Web Design Mastery | Pathway</title>
+    <title>EnsiDelivery</title>
   </head>
   <body>
     <nav>
@@ -33,11 +33,11 @@
         </div>
         <div class="header__content">
           <div>
-            <p class="sub__header">Book Now</p>
-            <h1>The Smiling 😊<br />agent for travel</h1>
+            <p class="sub__header">Send Now</p>
+            <h1>The Smiling 😊<br />agent for Delivery</h1>
             <p class="section__subtitle">
-              Make your travel more enjoyable with us. We are the best travel
-              agency and we are providing the best travel services for our
+              Make your deliveries more enjoyable with us. We are the best delivery
+              buisness and we are providing the best delivery services for our
               clients.
             </p>
             <div class="action__btns">

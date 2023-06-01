@@ -7,8 +7,7 @@ use App\Models\commande;
 use App\Models\retour;
 use App\Models\tournee;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use ArielMejiaDev\LarapexCharts\Facades\LarapexChart;
+use PDF;
 class commandesController extends Controller
 {
     public function __construct()
@@ -137,5 +136,11 @@ class commandesController extends Controller
         return view('dashboard', ["commandes_livré" => $commande_livré, "commandes_non_livré" => $commande_non_livré, "retour_livré" => $retour_livré, "retour_non_livré" => $retour_non_livré, "months" => $months, 'commandes' => $commandes]);
     }
 
-    
+    public function createPdf($id){
+        $commande = commande::findOrfail($id);
+        
+        $pdf = PDF::loadView('commandes.pdf', compact('commande'));
+        return $pdf->download('bon_livraison.pdf');
+        return redirect('/commandes');
+    }
 }

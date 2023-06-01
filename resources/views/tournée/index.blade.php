@@ -42,7 +42,7 @@
                         <td><p class="status green">{{ $tournée->etat }}</p></td>
                         @endif
                         <td>{{ $tournée->id_chauffeur }}</td>
-                        <td class="actions"><a  href="{{ route('tournée.edit', $tournée->id_tournée) }}"><i class="ri-edit-fill edit"></i></a><a href="{{ route('tournée.destroy', $tournée->id_tournée) }}"><i class="ri-delete-bin-6-line delete"></i></a></td>
+                        <td class="actions except"><a  href="{{ route('tournée.edit', $tournée->id_tournée) }}"><i class="ri-edit-fill edit"></i></a><a href="{{ route('tournée.destroy', $tournée->id_tournée) }}"><i class="ri-delete-bin-6-line delete"></i></a></td>
                     </tr>  
                     @endforeach
                 </tbody>

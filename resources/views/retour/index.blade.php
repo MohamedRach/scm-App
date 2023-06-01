@@ -38,7 +38,7 @@
                         @endif
                         <td>{{ $retour->id_retour }}</td>
                         <td>{{ $retour->id_client }}</td>
-                        <td class="actions"><a  href="{{ route('retour.edit', $retour->id_retour) }}"><i class="ri-edit-fill edit"></i></a><a href="{{ route('retour.destroy', $retour->id_retour) }}"><i class="ri-delete-bin-6-line delete"></i></a></td>
+                        <td class="actions except"><a  href="{{ route('retour.edit', $retour->id_retour) }}"><i class="ri-edit-fill edit"></i></a><a href="{{ route('retour.destroy', $retour->id_retour) }}"><i class="ri-delete-bin-6-line delete"></i></a></td>
                     </tr>
                     @endforeach
                    

@@ -83,7 +83,9 @@ td{
     flex-direction: row;
     gap: 5px;
     align-items: center;
+    justify-content: center;
 }
+
 .delete{
     color: red;
 }
@@ -92,7 +94,7 @@ td{
 }
 a {
     text-decoration: none;
-    color: black;
+    color: white;
     
 }
 
@@ -179,4 +181,16 @@ option:first{
 
 .retourTable{
     display: none;
+}
+.bon{
+    width: 300px;
+    padding: 8px 8px;
+    background-color: #2869ff;
+    border-radius: 5px;
+}
+.bon a{
+    color: white;
+}
+.tit{
+    font-weight: bold;
 }
