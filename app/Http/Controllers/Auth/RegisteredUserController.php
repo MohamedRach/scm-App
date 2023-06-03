@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        if($user["admin"] === 1){
+        if($user["admin"] == 1){
             return redirect(RouteServiceProvider::ADMINHOME);
         } else {
             return redirect(RouteServiceProvider::USERHOME);
