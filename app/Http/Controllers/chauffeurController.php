@@ -34,7 +34,7 @@ class chauffeurController extends Controller
      */
     public function store(Request $request)
     {
-        $chauffeur = new Chauffeur();
+        $chauffeur = new chauffeur();
         $chauffeur->nom = request('nom');
         $chauffeur->prénom = request('prénom');
 
