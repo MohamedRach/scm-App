@@ -48,6 +48,7 @@ class retourController extends Controller
         $retour->id_client = Auth::id();
         
         $retour->save();
+        return redirect('/user');
     }
 
     /**
