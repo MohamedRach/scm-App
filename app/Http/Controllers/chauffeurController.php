@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chauffeur;
+use App\Models\chauffeur;
 use Illuminate\Http\Request;
 
 class chauffeurController extends Controller
