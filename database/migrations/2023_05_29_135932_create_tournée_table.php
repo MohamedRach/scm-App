@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id("id_tournée");
             $table->date("date_départ");
             $table->date("date_retour");
+            $table->string('etat');
             $table->unsignedBigInteger("id_chauffeur");
             $table->timestamps();
             $table->foreign("id_chauffeur")->references("id_chauffeur")->on("chauffeurs");
