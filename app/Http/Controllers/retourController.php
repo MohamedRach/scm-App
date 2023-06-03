@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\retour;
-use App\models\commande;
+use App\Models\commande;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class retourController extends Controller
