@@ -40,6 +40,14 @@
                 <span>Tournée</span>
               </a>
             </li> 
+            <li class="sidebar-list-item">
+              
+              <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <input type="submit" value="LogOut">
+                
+              </form>
+            </li> 
           </ul>
           
         </div>

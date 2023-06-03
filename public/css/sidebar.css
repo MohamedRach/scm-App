@@ -71,7 +71,7 @@ body {
 }
 
 .nav__logo span {
-  color: #3685fb;;
+  color: #3685fb;
 }
 .sidebar-list {
   list-style-type: none;
@@ -91,9 +91,22 @@ body {
   font-size: 14px;
   line-height: 24px;
 }
+.sidebar-list-item input {
+  background: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  color: var(--sidebar-link);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+  border: none;
+}
 .sidebar-list-item svg {
   margin-right: 8px;
 }
+
 .sidebar-list-item:hover {
   background-color: var(--sidebar-hover-link);
 }
