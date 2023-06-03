@@ -17,7 +17,11 @@
           <li class="link"><a href="{{ route('retour.create') }}">Ajouter un retour</a></li>
         </ul>
         <div>
-          <button class="btn"><a href="{{ route('logout') }}">LogOut</a></button>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <input class="btn logout" type="submit" value="LogOut">
+            </form>
+          
           
         </div>
         
@@ -59,45 +63,43 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($commandes as $commande )
                 <tr class="drop">
-                    <td>1</td>
-                    <td>Rue Ahmed Saadi, Casa..</td>
-                    <td>Casablanca</td>
-                    <td>100011</td>
-                    <td>13</td>
-                    <td>123</td>
-                    <td>0654374567</td>
+                    <td>{{ $commande->id_commande }}</td>
+                    <td>{{ $commande->quartier }} {{ $commande->N°_immeuble }}</td>
+                    <td>{{ $commande->ville }}</td>
+                    <td>{{ $commande->code_postal }}</td>
+                    <td>{{ $commande->poid }}</td>
+                    <td>{{ $commande->prix }}</td>
+                    <td>{{ $commande->telephone }}</td>
+                    @if ($commande->etat == "non livré")
                     <td><p class="status red">Non livré</p></td>
-                    
+                    @elseif ($commande->etat == "en cours")
+                    <td><p class="status yellow">en cours</p></td>
+                    @else
+                    <td><p class="status green">livré</p></td>
+                    @endif
                 </tr>
                 <tr class="childTableRow">
                     <td colspan="16">
                         <h5>details de la commande</h5>
                         <table class="details" align="center">
                             <tr>
-                                <td>street name: j5 amal 1</td>
-                                <td>building number: 123</td>
+                                <td><span class="tit">contenue d'expédition:</span> {{ $commande->contenue }}</td>
+                                <td><span class="tit">type d'expédition:</span> {{ $commande->type }}</td>
                             </tr>
                             <tr>
-                                <td>shipment content: ps5</td>
-                                <td>shipment type: Parcel</td>
+                                <td><span class="tit">option de paiment:</span> {{ $commande->paiment }}</td>
                             </tr>
+                            @if($commande->etat == "livré")
                             <tr>
-                                <td>payment options: sender</td>
+                                <td class="bon"><a href="{{ route('commandes.bon_livraison', $commande->id_commande) }}">télécharger le bon de livraison</a></td>
                             </tr>
+                            @endif
                         </table>
                     </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Rue Ahmed Saadi, Casa..</td>
-                    <td>Casablanca</td>
-                    <td>100011</td>
-                    <td>13</td>
-                    <td>123</td>
-                    <td>0654374567</td>
-                    <td><p class="status yellow">en cours</p></td>
-                </tr>
+                </tr>  
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -106,27 +108,28 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Adresse</th>
-                    <th>Ville</th>
-                    <th>C.Postale</th>
+                    <th>motif</th>
                     <th>Etat</th>
+                    <th>Commande</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach ($retours as $retour )
                 <tr>
-                    <td>1</td>
-                    <td>Rue Ahmed Saadi, Casa..</td>
-                    <td>Casablanca</td>
-                    <td>100011</td>
-                    <td><p class="status green">en cours</p></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Rue Ahmed Saadi, Casa..</td>
-                    <td>Casablanca</td>
-                    <td>100011</td>
+                    <td>{{ $retour->id_retour }}</td>
+                    <td>{{ $retour->motif }}</td>
+                    @if ($retour->etat == "non livré")
+                    <td><p class="status red">Non livré</p></td>
+                    @elseif ($retour->etat == "en cours")
                     <td><p class="status yellow">en cours</p></td>
+                    @else
+                    <td><p class="status green">livré</p></td>
+                    @endif
+                    <td>{{ $retour->id_commande }}</td>
+                    
                 </tr>
+                @endforeach
+               
             </tbody>
         </table>
     </div>

@@ -108,7 +108,7 @@
   
 
   .btn {
-    padding: 0.75rem 2rem;
+    
     outline: none;
     border: none;
     font-size: 1rem;
@@ -159,5 +159,9 @@
   
   .link a:hover {
     color: var(--primary-color);
+  }
+  .logout{
+    width: 100px;
+    text-align: center;
   }
   

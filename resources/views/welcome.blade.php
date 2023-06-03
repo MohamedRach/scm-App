@@ -58,10 +58,9 @@
               <div class="icon-wrapper">
                 <i class="ri-truck-fill"></i>
               </div>
-              <h3>Service Heading</h3>
+              <h3>Express Delivery</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-                consequatur necessitatibus eaque.
+                We offer fast and reliable express delivery services for local shipments. Whether you need urgent documents or packages delivered within the city or nearby areas, our dedicated team ensures prompt and efficient service. 
               </p>
             </div>
           </div>
@@ -70,10 +69,9 @@
               <div class="icon-wrapper">
                 <i class="ri-customer-service-2-fill"></i>
               </div>
-              <h3>Service Heading</h3>
+              <h3>Excellent Customer Service</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-                consequatur necessitatibus eaque.
+                At our local shipment delivery business, we prioritize exceptional customer service. Our friendly and knowledgeable support team is available to assist you at every step of the shipping process.
               </p>
             </div>
           </div>
@@ -82,10 +80,9 @@
               <div class="icon-wrapper">
                 <i class="ri-price-tag-3-fill"></i>
               </div>
-              <h3>Service Heading</h3>
+              <h3>Affordable Pricing</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-                consequatur necessitatibus eaque.
+                We believe that reliable and efficient shipping shouldn't break the bank. Our local shipment delivery services are competitively priced to offer you the best value for your money. 
               </p>
             </div>
           </div>
@@ -97,8 +94,7 @@
       <div class="section__container trip__container">
         <h2 class="section__title">What our customers say about us</h2>
         <p class="section__subtitle">
-          Explore your suitable and dream places around the world. Here you can
-          find your right destination.
+          
         </p>
         <div class="trip__grid">
           <div class="trip__card">
@@ -146,13 +142,12 @@
         <div class="gallary__content">
           <div>
             <h2 class="section__title">
-              Our trip gallary that will inspire you
+              where ever you are we can get to you
             </h2>
             <p class="section__subtitle">
-              Explore your suitable and dream places around the world. Here you
-              can find your right destination.
+              Discover the perfect delivery buisness in the country with our comprehensive services. 
             </p>
-            <button class="btn">View All</button>
+            <button class="btn">Let's go</button>
           </div>
         </div>
       </div>
@@ -163,8 +158,7 @@
         <div class="subscribe__content">
           <h2 class="section__title">Subscribe to get special prize</h2>
           <p class="section__subtitle">
-            Explore your suitable and dream places around the world. Here you
-            can find your right destination.
+            Discover the perfect delivery buisness in the country with our comprehensive services. 
           </p>
         </div>
         <div class="subscribe__form">

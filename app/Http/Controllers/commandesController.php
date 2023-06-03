@@ -13,7 +13,13 @@ class commandesController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        
+        $this->middleware('isAdmin')->only([
+            'index',
+            'destroy',
+            'edit',
+            'update',
+            'dashboard'
+        ]);
     }
     public function index()
     {
@@ -136,6 +142,16 @@ class commandesController extends Controller
         return view('dashboard', ["commandes_livré" => $commande_livré, "commandes_non_livré" => $commande_non_livré, "retour_livré" => $retour_livré, "retour_non_livré" => $retour_non_livré, "months" => $months, 'commandes' => $commandes]);
     }
 
+    public function userDashboard(){
+        
+        $id = Auth::id();
+        $commandes = commande::where('id_client',$id)->get();
+        $retours = retour::where('id_client',$id)->get();
+        
+        return view('user.dashboard', ["commandes" => $commandes, "retours" => $retours]);
+
+    }
+
     public function createPdf($id){
         $commande = commande::findOrfail($id);
         
@@ -143,4 +159,6 @@ class commandesController extends Controller
         return $pdf->download('bon_livraison.pdf');
         return redirect('/commandes');
     }
+
+    
 }

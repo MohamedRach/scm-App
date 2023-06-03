@@ -7,3 +7,6 @@
         {{ __('Log Out') }}
     </x-dropdown-link>
 </form>
+<script>
+    alert('you are not allowed in this page please logOut')
+</script>

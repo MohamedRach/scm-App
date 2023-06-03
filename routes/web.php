@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\tournéeController;
 use App\Http\Controllers\commandesController;
 use App\Http\Controllers\retourController;
+use App\Models\commande;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Gate;
 /*
@@ -36,7 +37,7 @@ Route::get("/admin/chauffeur", [chauffeurController::class, "create"])->name("ch
 Route::post("/admin/chauffeur", [chauffeurController::class, "store"])->name("chauffeur.store");
 
 
-
+Route::get("/user", [commandesController::class, 'userDashboard'])->name('commandes.user');
 Route::get("/user/commande", [commandesController::class, "create"])->name("commandes.create");
 Route::post("/user/commande", [commandesController::class, "store"])->name("commandes.store");
 Route::get ("/commandes", [commandesController::class, "index"])->name("commandes.index");
@@ -55,9 +56,7 @@ Route::post("/retour/update", [retourController::class, 'update'])->name("retour
 
 
 // user routes
-Route::get('/user', function () {
-    return view('user.Dashboard');
-});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
