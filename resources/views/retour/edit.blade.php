@@ -12,12 +12,13 @@
         <div class="form">
             <form action="{{ route("retour.update") }}" method="POST">
                 @csrf 
+                <input type="hidden" name="id" value="{{ $retour->id_retour }}">
                 <div class="inputfield">
                     <label>Etat</label>
                     <select name="etat" id="commande" class="input">
-                        <option value="en route" <?php if($retours->etat == 'livré'){echo("selected");}?>>livré</option>
-                        <option value="depart" <?php if($retours->etat == 'en cours'){echo("selected");}?>>en cours</option>
-                        <option value="retour" <?php if($retours->etat == 'non livré'){echo("selected");}?>>non livré</option> 
+                        <option value="livré" <?php if($retour->etat == 'livré'){echo("selected");}?>>livré</option>
+                        <option value="en cours" <?php if($retour->etat == 'en cours'){echo("selected");}?>>en cours</option>
+                        <option value="non livré" <?php if($retour->etat == 'non livré'){echo("selected");}?>>non livré</option> 
                     </select>
                 
                 </div>
