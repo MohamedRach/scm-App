@@ -30,11 +30,13 @@
             
 
         </div>    
-       
+        <div>
+            <a href="{{ route('userRegister') }}">Register an account</a>
+        </div>
 
         
 
-            <input type="submit" value="Login">
+            <input class = "loginButton" type="submit" value="Login">
         </div>
     </form>
     </div>

@@ -134,7 +134,6 @@
 <div class="modal_wrapper">
 	<div class="shadow"></div>
 	<div class="success_wrap">
-		<span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
 		<p>Vous avez terminé le processus avec succès.</p>
 	</div>
 </div>
