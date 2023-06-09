@@ -134,6 +134,7 @@
 <div class="modal_wrapper">
 	<div class="shadow"></div>
 	<div class="success_wrap">
+		
 		<p>Vous avez terminé le processus avec succès.</p>
 	</div>
 </div>

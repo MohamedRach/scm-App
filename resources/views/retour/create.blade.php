@@ -18,7 +18,11 @@
                     <label>Selectionner une commande</label>
                     <select name="commande" id="commande" class="input">
                         @foreach ($commandes as $commande )
-                            <option value={{ $commande->id_commande }}>la commande crée à <?php echo Str::substr($commande->created_at, 0, 10) ?></option>
+                            @if($commande->etat == "livré")
+                            <option value={{ $commande->id_commande }}>la commande crée à {{ $commande->created_at }}</option>
+                            @else
+                            <option value=""></option>
+                            @endif
                         @endforeach
                     </select>
                 
